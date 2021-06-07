@@ -1,0 +1,38 @@
+Algoritmo algoritmo8
+	Definir numeroAleatorio Como Entero
+	Definir resto Como Entero
+	Dimension aleatorios[10000]
+	Definir contador Como Entero
+	Definir salir Como Logico
+	Definir op Como Entero
+	contador <- 0
+	op <- 0
+	salir <- Falso
+	Repetir
+		Escribir 'Deseas salir?'
+		Escribir '1) No'
+		Escribir '2) Si'
+		Leer op
+		Segun op  Hacer
+			1:
+				numeroAleatorio <- azar(10000)
+				resto <- numeroAleatorio MOD 5
+				Si resto==0 Entonces
+					contador <- contador+1
+					aleatorios[contador] <- numeroAleatorio
+				FinSi
+			2:
+				salir <- Verdadero
+			De Otro Modo:
+				Escribir 'Ingresa una opcion valida'
+		FinSegun
+	Hasta Que salir==Verdadero
+	Si contador>0 Entonces
+		Para i<-1 Hasta contador Hacer
+			Escribir 'El multiplo de 5 generado es:'
+			Escribir aleatorios[i]
+		FinPara
+	SiNo
+		Escribir 'No se generaron multiplos de 5'
+	FinSi
+FinAlgoritmo
